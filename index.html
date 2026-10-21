@@ -1919,6 +1919,24 @@ small { font-size: 15px; }
 .v-fr__card--out { background: var(--ai); border: 0; box-shadow: 0 12px 28px rgba(74,84,234,.3); }
 .v-fr__card--out i { background: rgba(255,255,255,.18); color: #fff; }
 .v-fr__card--out b { color: #fff; } .v-fr__card--out span { color: rgba(255,255,255,.85); }
+
+/* Team photo (Oct 21): photo left, the 3 groups stacked right */
+#page-team .v-teamx { display: grid; grid-template-columns: 1.35fr 1fr; gap: 18px; align-items: stretch; min-height: 0; }
+#page-team .v-photo { position: relative; margin: 0; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lift, 0 18px 40px rgba(40,30,110,.14)); background: #12121a; min-height: 360px; }
+#page-team .v-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; display: block; }
+#page-team .v-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,18,26,0) 55%, rgba(18,18,26,.78) 100%); }
+#page-team .v-photo figcaption { position: absolute; left: 22px; bottom: 18px; z-index: 1; color: #fff; display: flex; flex-direction: column; gap: 2px; }
+#page-team .v-photo figcaption b { font-size: 22px; font-weight: 700; letter-spacing: -.2px; }
+#page-team .v-photo figcaption span { font-size: 14px; color: rgba(255,255,255,.82); }
+#page-team .v-team { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 12px; align-content: start; }
+#page-team .v-grp { padding: 14px 16px 14px; }
+#page-team .v-grp__h { margin-bottom: 10px; }
+#page-team .v-grp__n { width: 40px; height: 40px; font-size: 18px; border-radius: 12px; }
+#page-team .v-grp__t { font-size: 17px; }
+#page-team .v-grp .v-names, #page-team .v-grp--wide .v-names { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
+#page-team .v-name { font-size: 13.5px; padding: 3px 11px 3px 3px; gap: 7px; }
+#page-team .v-name i { width: 24px; height: 24px; font-size: 10px; }
+@media (max-width: 980px) { #page-team .v-teamx { grid-template-columns: 1fr; } #page-team .v-photo { min-height: 260px; } }
 </style>
 </head>
 <body>
@@ -2215,7 +2233,7 @@ small { font-size: 15px; }
           <h1 class="title">This was a team effort</h1>
           <p class="lede">Team Matthews.</p>
         </div></div>
-        <div class="v-team v-fill">
+        <div class="v-teamx v-fill"><figure class="v-photo rv"><img src="assets/team-matthews.jpg" alt="Team Matthews"><figcaption><b>Team Matthews</b><span>Demo showcase, tech partners and deal strategy</span></figcaption></figure><div class="v-team">
           <div class="v-grp v-grp--wide rv">
             <div class="v-grp__h"><span class="v-grp__n">11</span><span class="v-grp__t">Demo Showcase</span></div>
             <div class="v-names">
@@ -2230,6 +2248,7 @@ small { font-size: 15px; }
             <div class="v-grp__h"><span class="v-grp__n">6</span><span class="v-grp__t">Deal Strategy</span></div>
             <div class="v-names"><span class="v-name"><i>CL</i>Chris Lewis</span><span class="v-name"><i>RM</i>Robert Miller</span><span class="v-name"><i>JA</i>Jeanne Aguilera</span><span class="v-name"><i>AW</i>Alex White</span><span class="v-name"><i>AL</i>Allie Lenzmeier</span><span class="v-name"><i>BD</i>Brandon DeMoss</span></div>
           </div>
+        </div>
         </div>
         <div class="v-close rv rv-d3"><a class="demo-btn demo-btn--big" href="https://grewalruby.github.io/matthews_v1/" target="_blank" rel="noopener">Open the Matthews demo workspace<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
       </section>
